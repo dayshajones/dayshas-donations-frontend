@@ -7,7 +7,9 @@ function DonationsIndex({getDonations, donations}) {
     useEffect(getDonations, [getDonations])
 
     return <div className="cards">
+        <div className="wrap">
         {donations.map(donation => <DonationCard {...donation} key={donation.id}/>)}
+    </div>
     </div>
 }
 
