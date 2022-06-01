@@ -1,5 +1,18 @@
-function DonationsIndex(props){
-    return<h1>Donations go here!</h1>
-  }
-  
-  export default DonationsIndex
+import { connect } from 'react-redux'
+import React, { useEffect } from "react"
+import { getDonations } from '../redux/actions/donationsAction'
+import { DonationCard } from '../components/DonationCard'
+
+function DonationsIndex({getDonations, donations}) {
+    useEffect(getDonations, [getDonations])
+
+    return <div className="cards">
+        {donations.map(donation => <DonationCard {...donation} key={donation.id}/>)}
+    </div>
+}
+
+const mapStateToProps = (state) => {
+    return {donations: state.donations}
+}
+    
+export default connect(mapStateToProps, { getDonations})(DonationsIndex)
