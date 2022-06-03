@@ -3,8 +3,13 @@ import DonationsIndex from './containers/Donationsindex'
 import About from './components/About'
 import Cart from './components/Cart'
 import { Route, Routes, Link } from 'react-router-dom'
+import DonationsDetails from './components/DonationsDetails';
+import React, { useState } from "react"
+
 
 function App() {
+
+  const [cartDonations, setCartDonations ] = useState([])
   return (
     <>
     <Link to="/">Home</Link>
@@ -15,7 +20,8 @@ function App() {
     <Routes>
       <Route path="/donations" element={<DonationsIndex/>} />
       <Route path="/about" element={<About/>} />
-      <Route path="/cart" element={<Cart/>} />
+      <Route path="/cart" element={<Cart cartDonations={cartDonations}/>} />
+      <Route path="/donations/:id" element={<DonationsDetails/>} />
     </Routes>
     {/* <DonationsIndex /> */}
     </>

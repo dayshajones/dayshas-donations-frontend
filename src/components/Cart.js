@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function Cart() {
+const Cart = ({cartDonations}) => {
   return (
-    <div>Cart</div>
+    <div>Cart
+      
+      {cartDonations.length === 0 && (
+      <div>No items in cart:</div>)}
+    </div>
+
   )
 }
 
-
+export default Cart

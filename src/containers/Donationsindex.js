@@ -7,7 +7,9 @@ function DonationsIndex() {
     const donations = useSelector(state => state.donations)
     const dispatch = useDispatch()
     
-    useEffect(getDonations, [getDonations])
+    useEffect(() => {
+        dispatch(getDonations())
+    }, [getDonations])
 
     return <div className="cards">
         <div className="wrap">
