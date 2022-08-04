@@ -1,13 +1,10 @@
-import React from 'react'
+import { ReactComponent as ShoppingIcon} from '../assets/shopping-bag.svg'
 
-const Cart = ({cartDonations}) => {
+const Cart = () => {
   return (
-    <div>Cart
-      
-      {cartDonations.length === 0 && (
-      <div>No items in cart:</div>)}
+    <div>
+      Cart
     </div>
-
   )
 }
 

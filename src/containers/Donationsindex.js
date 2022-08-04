@@ -1,27 +1,55 @@
-import { useSelector, useDispatch } from 'react-redux'
-import React, { useEffect } from "react"
+// import { useSelector, useDispatch } from 'react-redux'
+// import React, { useEffect } from "react"
+// import { getDonations } from '../redux/actions/donationsAction'
+// import { DonationCard } from '../components/DonationCard'
+
+// function DonationsIndex() {
+//     const donations = useSelector(state => state.donations)
+//     const dispatch = useDispatch()
+    
+//     useEffect(() => {
+//         dispatch(getDonations())
+//     }, [getDonations])
+
+//     return <div className="cards">
+//         <div className="wrap">
+//         {donations.map(donation => <DonationCard {...donation} key={donation.id}/>)}
+//     </div>
+//     </div>
+// }
+
+// // const mapStateToProps = (state) => {
+// //     return {donations: state.donations}
+// // }
+    
+// // export default connect(mapStateToProps, { getDonations})(DonationsIndex)
+
+// export default DonationsIndex
+
+import { useEffect, useState } from "react"
 import { getDonations } from '../redux/actions/donationsAction'
+import { connect } from 'react-redux'
 import { DonationCard } from '../components/DonationCard'
 
-function DonationsIndex() {
-    const donations = useSelector(state => state.donations)
-    const dispatch = useDispatch()
-    
-    useEffect(() => {
-        dispatch(getDonations())
-    }, [getDonations])
+function DonationIndex({getDonations, donations}){
 
-    return <div className="cards">
-        <div className="wrap">
-        {donations.map(donation => <DonationCard {...donation} key={donation.id}/>)}
-    </div>
-    </div>
+const [ cart, setCart] = useState([])
+
+const handleClick = (donation) => {
+    console.log(donation)
 }
 
-// const mapStateToProps = (state) => {
-//     return {donations: state.donations}
-// }
-    
-// export default connect(mapStateToProps, { getDonations})(DonationsIndex)
+  useEffect(getDonations, [getDonations])
 
-export default DonationsIndex
+  return <div className="cards">
+       <div className="wrap">
+        {donations.map(donation => <DonationCard {...donation} key={donation.id} handleClick={handleClick} />)}
+        </div>
+  </div>
+}
+
+const mapStateToProps = (state) => {
+  return {donations: state.donations}
+}
+
+export default connect(mapStateToProps, { getDonations })(DonationIndex)

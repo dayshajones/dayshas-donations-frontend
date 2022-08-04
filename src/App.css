@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+.navigation {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.navigation .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+}
+
+.navigation .logo-container .nav-links-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navigation .logo-container .nav-links-container {
+      padding: 10px 15px;
+      cursor: pointer;
+}
+
+.cart-icon-container {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cart-icon-container .shopping-icon {
+    width: 24px;
+    height: 24px;
+}
+
+  .cart-icon-container .item-count {
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    bottom: 12px;
+}
+
+
+
+body {
+  background-color: beige;
+}
