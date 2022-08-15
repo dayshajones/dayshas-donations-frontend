@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import React from 'react'
 
 export function DonationCard({ id, title, brand, size, department, image_url, available, shipping_price, handleClick }){
 
   return <div className="card">
-    <Link to={`/donations/${id}`}><h3>{title}</h3></Link>
+    {/* <Link to={`/donations/${id}`}><h3>{title}</h3></Link> */}
     <h3>{title}</h3>
     <p>{brand}</p>
     <p>{department}</p>
