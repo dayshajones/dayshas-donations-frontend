@@ -86,8 +86,21 @@
     bottom: 12px;
 }
 
-
-
 body {
-  background-color: beige;
+  background-color: #F8E5E5;
 }
+
+div .card {
+  background-color:  #C39EA0;
+  color: #F8E5E5;
+  border-color: #C39EA0;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 25px;
+   ;
+}
+
+/* #FA255E; */

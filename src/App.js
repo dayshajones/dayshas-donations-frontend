@@ -13,7 +13,8 @@ function App() {
   return (
     <>
     <NavigationBar/> 
-    <h1>Donations</h1>
+    <br/>
+    <h3>Donations</h3>
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/donations" element={<DonationsIndex/>} />

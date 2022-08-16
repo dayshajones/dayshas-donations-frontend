@@ -4,7 +4,7 @@ import React from 'react'
 const Cart = () => {
   return (
     <div>
-      <h2>Cart</h2>
+      <span>Cart</span>
     </div>
   )
 }

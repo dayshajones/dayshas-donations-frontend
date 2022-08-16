@@ -8,9 +8,9 @@ import { BsFillCartFill } from "react-icons/bs";
 export default function NavigationBar() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">Daysha's Donations</Navbar.Brand>
+          {/* <Navbar.Brand href="#home">Daysha's Donations</Navbar.Brand> */}
             <Nav className="me-auto">
               <Nav.Link href="home">Home</Nav.Link>
               <Nav.Link href="about">About</Nav.Link>
