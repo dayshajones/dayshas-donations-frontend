@@ -1,9 +1,10 @@
 // import { Link } from 'react-router-dom'
 import React from 'react'
-import CardButton from './CardButton';
-import Card from 'react-bootstrap/Card';
+// import CardButton from './CardButton';
+import { connect } from 'react-redux'
+import { addToCart } from '../redux/actions/cartActions'
 
-export function DonationCard({ id, title, brand, size, department, image_url, available, shipping_price, handleClick }){
+const DonationCard = ({ id, title, brand, size, department, image_url, available, shipping_price, handleClick, addToCart }) => {
 
   return (
   <div className="card">
@@ -15,7 +16,16 @@ export function DonationCard({ id, title, brand, size, department, image_url, av
     <img src={image_url} alt={title} />
       <p>{available}</p>
       <p>${shipping_price} </p> 
-      <CardButton onClick={() => handleClick({ id, title, brand, size, department, image_url, available, shipping_price})}>Add to Cart</CardButton>
+      <button onClick={() => addToCart({id})}>Add to Cart</button>
+      {/* <button onClick={() => addToCart({ id, title, brand, size, department, image_url, available, shipping_price})}>Add to Cart</button> */}
   </div>
   )
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(DonationCard)

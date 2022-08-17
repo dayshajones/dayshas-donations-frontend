@@ -1,5 +1,17 @@
-import { applyMiddleware, createStore } from 'redux'
+import {createStore, compose, applyMiddleware} from 'redux';
+// import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
-import reducer from './redux/reducer'
+import donationReducer from './redux/reducers/donationReducer'
+// import cartReducer from './redux/reducers/cartReducer';
 
-export default createStore(reducer, applyMiddleware(thunk))
+// const rootReducer = combineReducers({
+//     donationReducer,
+//     cartReducer
+// })
+
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(donationReducer, composeEnhancer(applyMiddleware(thunk)))
+
+export default store 

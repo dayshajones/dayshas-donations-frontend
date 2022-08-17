@@ -2,9 +2,9 @@ import React from "react"
 import { useEffect } from "react"
 import { getDonations } from '../redux/actions/donationsAction'
 import { connect } from 'react-redux'
-import { DonationCard } from '../components/DonationCard'
+import DonationCard from '../components/DonationCard'
 
-function DonationIndex({getDonations, donations}){
+function DonationIndex({getDonations, allDonations}){
 
 // const [ cart, setCart] = useState([])
 
@@ -14,15 +14,18 @@ const handleClick = (donation) => {
 
   useEffect(getDonations, [getDonations])
 
-  return <div className="cards">
+  return (
+    <div className="cards">
        <div className="wrap">
-        {donations.map(donation => <DonationCard {...donation} key={donation.id} handleClick={handleClick} />)}
+        {allDonations.map(donation => <DonationCard {...donation} key={donation.id} handleClick={handleClick} />)}
         </div>
-  </div>
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => {
-  return {donations: state.donations}
+  return {
+    allDonations: state.allDonations}
 }
 
 export default connect(mapStateToProps, { getDonations })(DonationIndex)

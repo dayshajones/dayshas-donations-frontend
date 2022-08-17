@@ -12,7 +12,7 @@ export default function NavigationBar() {
         <Container>
           {/* <Navbar.Brand href="#home">Daysha's Donations</Navbar.Brand> */}
             <Nav className="me-auto">
-              <Nav.Link href="home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="about">About</Nav.Link>
               <Nav.Link href="donations">Donations</Nav.Link>
               <Nav.Link href="cart"><BsFillCartFill/></Nav.Link>
