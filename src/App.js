@@ -6,7 +6,7 @@ import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
 import DonationsIndex from './containers/Donationsindex'
 import About from './components/About'
-import Cart from './components/Cart'
+import CartContainer from './containers/CartConatiner'
 import DonationsDetails from './components/DonationsDetails';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <Route path="/" element={<Home/>} />
       <Route path="/donations" element={<DonationsIndex/>} />
       <Route path="/about" element={<About/>} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/cart" element={<CartContainer />} />
       <Route path="/donations/:id" element={<DonationsDetails/>} />
     </Routes>
     </>

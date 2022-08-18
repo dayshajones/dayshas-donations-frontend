@@ -1,9 +1,14 @@
-export const addToCart = (donationId) => {
+export const addToCart = (donation) => {
     return {
         type: "ADD_TO_CART",
-        payload: {
-            id: donationId,
-        },
+        payload: donation
+    }
+}
+
+export const loadDonation = (donation) => {
+    return {
+        type: "LOAD_DONATION",
+        payload: donation,
     }
 }
 
