@@ -1,13 +1,27 @@
-import React from 'react'
-import { ReactComponent as ShoppingIcon} from '../assets/shopping-bag.svg'
+import React, { useState, useEffect} from 'react'
+import { connect } from 'react-redux'
 
-const CartIcon = () => {
+const CartIcon = ({ cart }) => {
+
+  const [cartCount, setCartCount] = useState(0)
+
+  useEffect(() => {
+    const count = cart.length;
+    setCartCount(count)
+  }, [cart, cartCount])
+
   return (
       <div className='cart-icon-container'>
-          <ShoppingIcon className='shopping-icon' />
-          <span className='item-count'>0</span>
+            <span className='item-count'>{cartCount}</span>
       </div>
   )
 }
 
-export default CartIcon
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+
+  }
+}
+
+export default connect(mapStateToProps)(CartIcon) 
