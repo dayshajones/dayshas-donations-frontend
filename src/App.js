@@ -14,7 +14,7 @@ function App() {
     <>
     <NavigationBar/> 
     <br/>
-    <h3>Donations</h3>
+    {/* <h3>Donations</h3> */}
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/donations" element={<DonationsIndex/>} />
