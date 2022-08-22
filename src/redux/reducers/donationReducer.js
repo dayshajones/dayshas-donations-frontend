@@ -19,7 +19,13 @@ export default function donationReducer(state=initialState, action){
                 ...state,
                  cart: [...state.cart, action.payload]
             }
-         case "LOAD_DONATION":
+        case "REMOVE_FROM_CART":
+            return {
+                ...state,
+                cart: state.cart.filter((donation) => donation.id !== action.payload.id),
+            }
+
+        case "LOAD_DONATION":
             return {...state, currentDonation: action.payload }
         default:
             return {...state}

@@ -26,7 +26,10 @@ export default function NavigationBar() {
               </LinkContainer>
 
               <LinkContainer to="/cart">
-                <Nav.Link><BsFillCartFill/><CartIcon/></Nav.Link>
+                <Nav.Link>
+                  <BsFillCartFill/>
+                  <CartIcon/>
+                </Nav.Link>
               </LinkContainer>
             </Nav>
         </Container>
