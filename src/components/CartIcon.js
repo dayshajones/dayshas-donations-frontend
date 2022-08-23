@@ -11,9 +11,7 @@ const CartIcon = ({ cart }) => {
   }, [cart, cartCount])
 
   return (
-      <div className='cart-icon-container'>
-            <span className='item-count'>{cartCount}</span>
-      </div>
+          <span className='item-count'>{cartCount}</span>
   )
 }
 

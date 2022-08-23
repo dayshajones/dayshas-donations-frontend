@@ -1,6 +1,16 @@
+const initialDonation = {
+        title: "",
+        brand: "",
+        size: "",
+        department: "",
+        image_url: "",
+        available: null,
+        shipping_price: null
+}
 const initialState = {
     allDonations: [],
-    cart: []
+    cart: [],
+    currentDonation: initialDonation,
 }
 
 export default function donationReducer(state=initialState, action){
@@ -9,7 +19,7 @@ export default function donationReducer(state=initialState, action){
         case "GET_DONATIONS":
           return {...state, allDonations: action.payload};
         case "GET_DONATION":
-            return {...state, selectedDonation: action.payload}
+            return {...state, currentDonation: action.payload}
         case "ADD_TO_CART":
             const exists = state.cart.find(d => d.id === action.payload.id);
             if(exists)
@@ -24,7 +34,6 @@ export default function donationReducer(state=initialState, action){
                 ...state,
                 cart: state.cart.filter((donation) => donation.id !== action.payload.id),
             }
-
         case "LOAD_DONATION":
             return {...state, currentDonation: action.payload }
         default:
