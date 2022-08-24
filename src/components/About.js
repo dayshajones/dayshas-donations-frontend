@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function About() {
+const About = () => {
   return (
     <div>
       <p>A place to donate my gently used items to people who want them. All you have to pay is shipping!
@@ -8,3 +8,5 @@ export default function About() {
     </div>
   )
 }
+
+export default About

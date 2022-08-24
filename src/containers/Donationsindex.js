@@ -4,7 +4,7 @@ import { getDonations } from '../redux/actions/donationsAction'
 import { connect } from 'react-redux'
 import DonationCard from '../components/DonationCard'
 
-function DonationIndex({getDonations, allDonations}){
+const DonationIndex = ({getDonations, allDonations}) => {
 
   useEffect(getDonations, [getDonations])
 

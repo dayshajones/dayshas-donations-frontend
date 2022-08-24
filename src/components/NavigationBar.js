@@ -6,7 +6,7 @@ import {LinkContainer} from 'react-router-bootstrap'
 import { BsFillCartFill } from "react-icons/bs";
 import CartIcon from '../components/CartIcon'
 
-export default function NavigationBar() {
+const NavigationBar = () => {
   return (
     <>
        <Navbar bg="light" variant="light">
@@ -36,3 +36,5 @@ export default function NavigationBar() {
     </>
   )
 }
+
+export default NavigationBar

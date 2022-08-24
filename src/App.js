@@ -12,9 +12,8 @@ import DonationsDetails from './components/DonationsDetails';
 function App() {
   return (
     <>
-    <NavigationBar/> 
+    <NavigationBar/>
     <br/>
-    {/* <h3>Donations</h3> */}
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/donations" element={<DonationsIndex/>} />

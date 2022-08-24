@@ -1,9 +1,13 @@
 import React from 'react'
-
-export default function Home() {
+import Admin from './Admin'
+const Home = () => {
   return (
     <div>
         <span>Home Page</span>
+        <Admin/>
     </div>
   )
 }
+
+
+export default Home

@@ -7,10 +7,15 @@ const initialDonation = {
         available: null,
         shipping_price: null
 }
+
+
 const initialState = {
     allDonations: [],
     cart: [],
     currentDonation: initialDonation,
+    admin: {
+        name: ''
+    }
 }
 
 export default function donationReducer(state=initialState, action){
