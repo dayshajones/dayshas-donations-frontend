@@ -4,9 +4,8 @@ import {submitSignup} from '../redux/actions/adminActions'
 import { connect } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 
-const Admin = (props) => {
+const AdminSignup = (props) => {
 
-  console.log(props)
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
@@ -35,4 +34,4 @@ const Admin = (props) => {
   )
 }
 
-export default connect(null, {submitSignup})(Admin)
+export default connect(null, {submitSignup})(AdminSignup)

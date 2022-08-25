@@ -41,6 +41,8 @@ export default function donationReducer(state=initialState, action){
             }
         case "LOAD_DONATION":
             return {...state, currentDonation: action.payload }
+        case "SET_ADMIN":
+            return {...state, admin: action.payload}
         default:
             return {...state}
     }

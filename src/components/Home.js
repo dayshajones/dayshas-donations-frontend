@@ -1,13 +1,15 @@
 import React from 'react'
-import Admin from './Admin'
+// import AdminSignup from './AdminSignup'
+import AdminLogin from './AdminLogin'
+
 const Home = () => {
   return (
     <div>
         <span>Home Page</span>
-        <Admin/>
+        {/* <AdminSignup/> */}
+        <AdminLogin/>
     </div>
   )
 }
-
 
 export default Home
