@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import {getDonation } from '../redux/actions/donationsAction'
+import {getDonation } from '../../redux/actions/donationsAction'
 import {BsFillBackspaceFill}  from "react-icons/bs";
 
-const DonationsDetails = ({getDonation, id, title, brand, size, department, image_url, available, shipping_price}) => {
+const DonationsDetails = ({getDonation, title, brand, size, department, image_url, available, shipping_price}) => {
 
   const params = useParams()
   const donationId = params.id

@@ -1,11 +1,13 @@
 const initialDonation = {
+        id: "",
         title: "",
         brand: "",
         size: "",
         department: "",
         image_url: "",
         available: null,
-        shipping_price: null
+        shipping_price: null,
+        admin_id: ""
 }
 
 
@@ -14,7 +16,8 @@ const initialState = {
     cart: [],
     currentDonation: initialDonation,
     admin: {
-        name: ''
+        name: '',
+        id: ''
     }
 }
 
@@ -43,6 +46,8 @@ export default function donationReducer(state=initialState, action){
             return {...state, currentDonation: action.payload }
         case "SET_ADMIN":
             return {...state, admin: action.payload}
+        case "ADD_DONATION":
+            return {...state, currentDonation: action.payload }
         default:
             return {...state}
     }

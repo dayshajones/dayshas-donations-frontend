@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import {submitSignup} from '../redux/actions/adminActions'
+import {submitSignup} from '../../redux/actions/adminActions'
 import { connect } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,7 @@ const AdminSignup = (props) => {
 
   return (
     <div>
-      <h4>Admin</h4>
+      <h4>Add an Amin:</h4>
       <form onSubmit={handleSubmit}>
         <label>
           Name:

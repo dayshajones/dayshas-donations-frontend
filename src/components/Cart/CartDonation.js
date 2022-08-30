@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {BsFillXSquareFill} from "react-icons/bs";
-import { removeFromCart } from '../redux/actions/cartActions'
+import { removeFromCart } from '../../redux/actions/cartActions'
 
 const CartDonation = ({ donation, removeFromCart }) => {
 

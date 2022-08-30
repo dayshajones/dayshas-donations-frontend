@@ -7,7 +7,7 @@ import Home from './components/Home';
 import DonationsIndex from './containers/Donationsindex'
 import About from './components/About'
 import CartContainer from './containers/CartConatiner'
-import DonationsDetails from './components/DonationsDetails';
+import DonationsDetails from './components/Donation/DonationsDetails';
 
 function App() {
   return (

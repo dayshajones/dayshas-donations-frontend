@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {LinkContainer} from 'react-router-bootstrap'
 import { BsFillCartFill } from "react-icons/bs";
-import CartIcon from '../components/CartIcon'
+import CartIcon from '../components/Cart/CartIcon'
 
 const NavigationBar = () => {
   return (

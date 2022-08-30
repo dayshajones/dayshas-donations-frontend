@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import {submitLogin} from '../redux/actions/adminActions'
+import {submitLogin} from '../../redux/actions/adminActions'
 import { connect } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 

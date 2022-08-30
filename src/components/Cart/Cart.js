@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { useState, useEffect } from 'react'
-import CartDonation from './CartDonation'
+import CartDonation from '../Cart/CartDonation'
 // import { NavItem } from 'react-bootstrap'
 
 const Cart = ({ cart }) => {

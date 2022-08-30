@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 // import CardButton from './CardButton';
 import { connect } from 'react-redux'
-import { addToCart, loadDonation } from '../redux/actions/cartActions'
+import { addToCart, loadDonation } from '../../redux/actions/cartActions'
 
 const DonationCard = ({ id, title, brand, size, department, image_url, available, shipping_price, addToCart }) => {
 

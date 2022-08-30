@@ -2,7 +2,7 @@ import React from "react"
 import { useEffect } from "react"
 import { getDonations } from '../redux/actions/donationsAction'
 import { connect } from 'react-redux'
-import DonationCard from '../components/DonationCard'
+import DonationCard from '../components/Donation/DonationCard'
 
 const DonationIndex = ({getDonations, allDonations}) => {
 
