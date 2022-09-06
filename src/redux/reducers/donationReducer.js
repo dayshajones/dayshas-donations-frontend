@@ -5,11 +5,10 @@ const initialDonation = {
         size: "",
         department: "",
         image_url: "",
-        available: null,
+        available: "",
         shipping_price: null,
         admin_id: ""
 }
-
 
 const initialState = {
     allDonations: [],
@@ -18,7 +17,7 @@ const initialState = {
     admin: {
         name: '',
         id: ''
-    }
+    },
 }
 
 export default function donationReducer(state=initialState, action){

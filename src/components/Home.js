@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import DonationForm from './Donation/DonationForm'
 
 const Home = ({name}) => {
-  console.log({name})
+  // console.log({name})
 
   const loggedIn = () => 
     <div>

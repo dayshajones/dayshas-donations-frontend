@@ -10,10 +10,11 @@ const DonationForm = ({adminId, submitDonation}) => {
     const [title, setTitle] = useState('')
     const [image_url, setImageUrl] = useState('')
     const [shipping_price, setShippingPrice] = useState('')
+    const [available] = useState(true)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const newDonation = {brand, department, size, title, image_url, shipping_price, adminId}
+        const newDonation = {brand, department, size, title, image_url, available, shipping_price, adminId}
         submitDonation(newDonation)
     }
 
