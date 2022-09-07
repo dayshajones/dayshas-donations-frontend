@@ -10,11 +10,12 @@ import CartContainer from './containers/CartConatiner'
 import DonationsDetails from './components/Donation/DonationsDetails';
 import CheckoutContainer from './components/Checkout/CheckoutContainer'
 import BillingForm from "./components/Checkout/BillingForm";
+import ThankyouMsg from "./components/Checkout/ThankyouMsg"
 
 function App() {
 
   const [name, setName] = useState("")
-	const [email, setEmail] = useState("")
+	// const [email, setEmail] = useState("")
 	const [address, setAddress] = useState({
 		line1: "",
 		city: "",
@@ -23,6 +24,7 @@ function App() {
 	})
 
     function handleAddressForm(e) {
+      e.preventDefault()
 		setAddress({ ...address, [e.target.name]: e.target.value })
 	}
 
@@ -36,14 +38,19 @@ function App() {
       <Route path="/about" element={<About/>} />
       <Route path="/cart" element={<CartContainer />} />
       <Route path="/donations/:id" element={<DonationsDetails/>} />
+      <Route path="/thankyou" element={<ThankyouMsg/>} />
       <Route path="/checkout" element={ <BillingForm
       name={name}
-      email={email}
-      setEmail={setEmail}
+      // email={email}
+      // setEmail={setEmail}
       setName={setName}
       address={address}
       handleAddressForm={handleAddressForm} />} />
-      <Route path="/payment" element={<CheckoutContainer name={name} address={address} email={email} />} />
+      <Route path="/payment" element={<CheckoutContainer
+      name={name}
+      address={address}
+      // email={email} 
+      />} />
     </Routes>
     </>
   );

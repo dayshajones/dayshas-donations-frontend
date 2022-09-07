@@ -5,8 +5,6 @@ import CartDonation from '../Cart/CartDonation'
 
 const Cart = ({ cart }) => {
 
-  const navigate = useNavigate()
-
   const [total, setTotal] = useState(0)
 
   useEffect(() => {
@@ -17,8 +15,10 @@ const Cart = ({ cart }) => {
     setTotal(price)
   }, [cart, total, setTotal])
 
-  const handleClick = ({total}) => {
-    navigate('/checkout', { state: {total: total} });
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/checkout', { state: {total} });
   }
   
   return (

@@ -11,7 +11,6 @@ const NavigationBar = () => {
     <>
        <Navbar bg="light" variant="light">
         <Container>
-          {/* <Navbar.Brand href="#home">Daysha's Donations</Navbar.Brand> */}
             <Nav className="me-auto">
               <LinkContainer to="/">
                 <Nav.Link>Home</Nav.Link>
