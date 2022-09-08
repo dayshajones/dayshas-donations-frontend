@@ -22,6 +22,12 @@ export const submitLogin = (admin) => {
   .then(admin => dispatch({type: "SET_ADMIN", payload: admin}))
 }
 
+export const logout = () => {
+  return dispatch => {
+    dispatch({type: "LOGOUT"})
+  }
+}
+
 
 
   

@@ -5,12 +5,12 @@ import { Route, Routes} from 'react-router-dom'
 import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
 import DonationsIndex from './containers/Donationsindex'
-import About from './components/About'
 import CartContainer from './containers/CartConatiner'
 import DonationsDetails from './components/Donation/DonationsDetails';
 import CheckoutContainer from './components/Checkout/CheckoutContainer'
 import BillingForm from "./components/Checkout/BillingForm";
 import ThankyouMsg from "./components/Checkout/ThankyouMsg"
+import AdminLogin from "./components/Admin/AdminLogin";
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/donations" element={<DonationsIndex/>} />
-      <Route path="/about" element={<About/>} />
+      <Route path="/admin" element={<AdminLogin/>} />
       <Route path="/cart" element={<CartContainer />} />
       <Route path="/donations/:id" element={<DonationsDetails/>} />
       <Route path="/thankyou" element={<ThankyouMsg/>} />

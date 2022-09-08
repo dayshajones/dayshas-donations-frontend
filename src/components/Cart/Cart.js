@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { connect } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 import CartDonation from '../Cart/CartDonation'
+import { Button } from "react-bootstrap";
 
 const Cart = ({ cart }) => {
 
@@ -24,9 +25,9 @@ const Cart = ({ cart }) => {
   return (
     <div>
         <h3>SHIPPING TOTAL: ${total}</h3>
-          <button onClick={handleClick}>
+        <Button variant="outline-secondary" onClick={handleClick}>
             Proceed to Payment
-          </button>
+          </Button>
       <br />
       <div className='cart-donation-container'>
         {cart.map((donation) => (

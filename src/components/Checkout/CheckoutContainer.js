@@ -33,8 +33,13 @@ const CheckoutContainer = ({name, email, address }) => {
       }, []);
 
       const appearance = {
-        theme: 'stripe',
+        theme: 'night',
+        variables: {
+          colorPrimary: '#f8e5e5',
+          colorBackground: '#c39ea0',
+        },
       };
+      
       const options = {
         clientSecret,
         appearance,

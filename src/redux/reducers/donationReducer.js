@@ -52,6 +52,8 @@ export default function donationReducer(state=initialState, action){
                 allDonations: state.allDonations.filter(
                     donation => donation.id !== action.payload)
                 }
+        case "LOGOUT":
+            return {...state, admin: ""}
         default:
             return {...state}
     }

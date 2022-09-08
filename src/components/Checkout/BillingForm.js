@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 const BillingForm = ({name, setName, email, setEmail, address, handleAddressForm}) => {
 
@@ -13,32 +14,37 @@ const BillingForm = ({name, setName, email, setEmail, address, handleAddressForm
     }
 
     return (
-        <>
+        <div className="billing">
         <h2>Total: ${state.total}</h2>
-                <form>
+            <form className="billing-form">
                 <h3>Customer Information:</h3>
                 <label>
-                    Email: <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    Email:<input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </label>
+                <br/>
                 <label>
-                    Name: <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+                    Name:<input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
                 </label>
+                <br/>
                 <label>
-                    Address: <input type="text" name="line1" value={address.line1} onChange={handleAddressForm}/>
+                    Address:<input type="text" name="line1" value={address.line1} onChange={handleAddressForm}/>
                 </label>
+                <br/>
                 <label>
-                    City: <input type="text" name="city" value={address.city} onChange={handleAddressForm}/>
+                    City:<input type="text" name="city" value={address.city} onChange={handleAddressForm}/>
                 </label>
+                <br/>
                 <label>
-                    State: <input type="text" name="state" value={address.state} onChange={handleAddressForm} />
-                    </label>
+                    State:<input type="text" name="state" value={address.state} onChange={handleAddressForm} />
+                </label>
+                <br/>
                 <label>
-                    Postal Code: <input type="text" name="postal_code" value={address.postal_code} onChange={handleAddressForm} />
+                    Zip Code:<input type="text" name="postal_code" value={address.postal_code} onChange={handleAddressForm} />
                 </label>
                 <br />
-                <button onClick={handleClick}>Proceed to Payment</button>
-                </form>
-                </>
+                <Button variant="outline-secondary" onClick={handleClick}>Proceed to Payment</Button>
+            </form>
+        </div>
     )
 }
 
