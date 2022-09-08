@@ -37,3 +37,18 @@ export const submitDonation = (newDonation) => {
   .then(donation => dispatch({type: "ADD_DONATION", payload: donation}))
   }
 }
+
+export const deleteDonation = (donationId) => {
+  return dispatch => {
+    return  fetch(`http://localhost:3000/donations/${donationId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+  })
+    .then(resp => resp.json())
+    .then(() => {
+      dispatch({ type: "DELETE_DONATION", payload: donationId})
+    })
+  }
+}

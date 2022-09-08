@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const BillingForm = ({name, setName, address, handleAddressForm}) => {
+const BillingForm = ({name, setName, email, setEmail, address, handleAddressForm}) => {
 
     const {state} = useLocation()
     const navigate = useNavigate()
@@ -17,9 +17,9 @@ const BillingForm = ({name, setName, address, handleAddressForm}) => {
         <h2>Total: ${state.total}</h2>
                 <form>
                 <h3>Customer Information:</h3>
-                {/* <label>
+                <label>
                     Email: <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </label> */}
+                </label>
                 <label>
                     Name: <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
                 </label>

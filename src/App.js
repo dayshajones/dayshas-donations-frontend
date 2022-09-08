@@ -15,7 +15,7 @@ import ThankyouMsg from "./components/Checkout/ThankyouMsg"
 function App() {
 
   const [name, setName] = useState("")
-	// const [email, setEmail] = useState("")
+	const [email, setEmail] = useState("")
 	const [address, setAddress] = useState({
 		line1: "",
 		city: "",
@@ -41,8 +41,8 @@ function App() {
       <Route path="/thankyou" element={<ThankyouMsg/>} />
       <Route path="/checkout" element={ <BillingForm
       name={name}
-      // email={email}
-      // setEmail={setEmail}
+      email={email}
+      setEmail={setEmail}
       setName={setName}
       address={address}
       handleAddressForm={handleAddressForm} />} />

@@ -47,6 +47,11 @@ export default function donationReducer(state=initialState, action){
             return {...state, admin: action.payload}
         case "ADD_DONATION":
             return {...state, currentDonation: action.payload }
+        case "DELETE_DONATION":
+            return {...state, 
+                allDonations: state.allDonations.filter(
+                    donation => donation.id !== action.payload)
+                }
         default:
             return {...state}
     }

@@ -28,7 +28,7 @@ const DonationCard = ({ id, title, brand, size, department, image_url, available
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (donation) => dispatch(addToCart(donation)),
-    loadDonation: (donation) => dispatch(loadDonation(donation))
+    loadDonation: (donation) => dispatch(loadDonation(donation)),
   }
 }
 

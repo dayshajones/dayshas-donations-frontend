@@ -7,7 +7,6 @@ import { loadStripe } from "@stripe/stripe-js"
 // const apiKey = `${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`;
 // const stripePromise = loadStripe(apiKey);
 const stripePromise = loadStripe('pk_test_51Lcf9EDGH2pX2OqyeBwxggNKc17dDm6hLqGavVUIQbOnXgznfb15e8CS7z4JkbMg3ITMJ2d4eXfZHKEBjHCxXHKH00uqEKMQN4');
-console.log(stripePromise)
 
 const CheckoutContainer = ({name, email, address }) => {
 
