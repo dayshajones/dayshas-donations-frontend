@@ -5,7 +5,6 @@ import CartDonation from '../Cart/CartDonation'
 import { Button } from "react-bootstrap";
 
 const Cart = ({ cart }) => {
-
   const [total, setTotal] = useState(0)
 
   useEffect(() => {
@@ -23,13 +22,15 @@ const Cart = ({ cart }) => {
   }
   
   return (
-    <div>
+    <div className="cart-container">
+      <div className="total-container">
         <h3>SHIPPING TOTAL: ${total}</h3>
         <Button variant="outline-secondary" onClick={handleClick}>
-            Proceed to Payment
+            Checkout
           </Button>
+      </div>
       <br />
-      <div className='cart-donation-container'>
+      <div className="wrap">
         {cart.map((donation) => (
           <CartDonation key={donation.id} donation={donation}/>
         ))}

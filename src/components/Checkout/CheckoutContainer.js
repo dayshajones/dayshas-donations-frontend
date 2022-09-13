@@ -4,8 +4,6 @@ import CheckoutForm from "./CheckoutForm"
 import { useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js"
 
-// const apiKey = `${process.env.REACT_APP_STRIPE_PUBLIC_KEY}`;
-// const stripePromise = loadStripe(apiKey);
 const stripePromise = loadStripe('pk_test_51Lcf9EDGH2pX2OqyeBwxggNKc17dDm6hLqGavVUIQbOnXgznfb15e8CS7z4JkbMg3ITMJ2d4eXfZHKEBjHCxXHKH00uqEKMQN4');
 
 const CheckoutContainer = ({name, email, address }) => {
@@ -33,10 +31,10 @@ const CheckoutContainer = ({name, email, address }) => {
       }, []);
 
       const appearance = {
-        theme: 'night',
+        theme: 'stripe',
         variables: {
-          colorPrimary: '#f8e5e5',
-          colorBackground: '#c39ea0',
+          colorPrimary: '#c39ea0', 
+          colorBackground: '#f8e5e5',
         },
       };
       

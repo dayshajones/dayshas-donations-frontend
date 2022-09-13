@@ -18,6 +18,7 @@ const AdminLogin = (props) => {
     }
 
     return (
+        <div className='admin-login'>
             <Form onSubmit={handleSubmit}>
                 <h2>Admin Login</h2>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -30,6 +31,7 @@ const AdminLogin = (props) => {
             </Form.Group>
                <Button variant="light" type="submit">Submit</Button>
             </Form>
+        </div>
     )
 }
 

@@ -43,17 +43,17 @@ export default function donationReducer(state=initialState, action){
             }
         case "LOAD_DONATION":
             return {...state, currentDonation: action.payload }
-        case "SET_ADMIN":
-            return {...state, admin: action.payload}
         case "ADD_DONATION":
-            return {...state, currentDonation: action.payload }
+            return {...state, currentDonation: action.payload, allDonations: [...state.allDonations, action.payload]}
         case "DELETE_DONATION":
             return {...state, 
                 allDonations: state.allDonations.filter(
                     donation => donation.id !== action.payload)
                 }
-        case "LOGOUT":
-            return {...state, admin: ""}
+        case "SET_ADMIN":
+            return {...state, admin: action.payload}
+            case "LOGOUT":
+                return {...state, admin: ""}
         default:
             return {...state}
     }

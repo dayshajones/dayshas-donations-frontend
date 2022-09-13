@@ -186,3 +186,48 @@ h6 {
   margin-right: 0;
   font-weight: bold;
 }
+
+div .billing {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+div .checkout-container {
+  padding: 20px;
+  margin: 20px;
+}
+
+div .homepage {
+  justify-content: center;
+  display: flex;
+  padding: 20px;
+  margin: 20px;
+}
+
+div .card {
+  justify-content: center;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+}
+
+div .admin-login {
+  padding: 20px;
+  margin: 20px;
+}
+
+.card-img {
+  align-self: center;
+}
+
+div .total-container {
+  align-content: center;
+  text-align: center;
+}
+
+button:disabled
+{
+  display: none;
+}
+

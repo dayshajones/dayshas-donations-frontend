@@ -1,7 +1,7 @@
 import React from 'react'
-import AdminLogin from './Admin/AdminLogin'
+import AdminLogin from './AdminLogin'
 import { connect } from 'react-redux'
-import DonationForm from './Donation/DonationForm'
+import DonationForm from '../Donation/DonationForm'
 
 const AdminContainer = ({name}) => {
 

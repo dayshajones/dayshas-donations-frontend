@@ -10,8 +10,7 @@ import DonationsDetails from './components/Donation/DonationsDetails';
 import CheckoutContainer from './components/Checkout/CheckoutContainer'
 import BillingForm from "./components/Checkout/BillingForm";
 import ThankyouMsg from "./components/Checkout/ThankyouMsg"
-// import AdminLogin from "./components/Admin/Admin";
-import AdminContainer from "./components/AdminContainer";
+import AdminContainer from "./components/Admin/AdminContainer"
 
 function App() {
 

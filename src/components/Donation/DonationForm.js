@@ -72,7 +72,7 @@ const mapStateToProps = (state) => {
     const adminId = state.admin ? state.admin.id : ""
     return {
         donationId: state.currentDonation.id,
-        adminId
+        adminId,
     }
 }
 

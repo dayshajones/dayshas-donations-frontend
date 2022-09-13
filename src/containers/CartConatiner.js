@@ -6,7 +6,7 @@ const CartContainer = () => {
     return (
         <div>
             <br />
-            <Cart /> 
+            <Cart />
         </div>
     )
 }

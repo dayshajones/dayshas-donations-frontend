@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
 const BillingForm = ({name, setName, email, setEmail, address, handleAddressForm}) => {
-
     const {state} = useLocation()
     const navigate = useNavigate()
     const total = state.total
