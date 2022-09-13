@@ -26,8 +26,6 @@ The server will auto-open in your browser and as long as everything has initiali
 
 ## Backend
 
-If you haven't followed the backend properly please navigate there first in order to proceed.
-
 [Daysha's Donations Backend](https://github.com/dayshajones/dayshas-donations-backend)
 
 
