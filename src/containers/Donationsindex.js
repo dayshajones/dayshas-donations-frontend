@@ -1,12 +1,14 @@
 import React from "react"
 import { useEffect } from "react"
 import { getDonations } from '../redux/actions/donationsAction'
-import { connect } from 'react-redux'
+import {connect, useSelector } from 'react-redux'
 import DonationCard from '../components/Donation/DonationCard'
 
-const DonationIndex = ({getDonations, allDonations}) => {
+const DonationIndex = ({getDonations}) => {
 
   useEffect(getDonations, [getDonations])
+
+  const allDonations = useSelector((state) => state.allDonations)
 
   return (
     <div className="cards">
@@ -17,11 +19,4 @@ const DonationIndex = ({getDonations, allDonations}) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    allDonations: state.allDonations
-  }
-}
-
-
-export default connect(mapStateToProps, { getDonations })(DonationIndex)
+export default connect(null, { getDonations })(DonationIndex)
