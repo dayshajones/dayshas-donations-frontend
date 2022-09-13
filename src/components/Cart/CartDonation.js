@@ -1,11 +1,13 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {BsFillXSquareFill} from "react-icons/bs";
 import { removeFromCart } from '../../redux/actions/cartActions'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-const CartDonation = ({ donation, removeFromCart }) => {
+const CartDonation = ({ donation }) => {
+
+    const dispatch = useDispatch()
 
     return (
         <Card style={{ width: '18rem' }}>
@@ -16,7 +18,7 @@ const CartDonation = ({ donation, removeFromCart }) => {
           <Card.Text>{donation.department}</Card.Text>
           <Card.Text>{donation.size}</Card.Text>
           <Card.Text>${donation.shipping_price}</Card.Text>
-          <Button variant="secondary" onClick={() => removeFromCart(donation.id)}
+          <Button variant="secondary" onClick={() => dispatch(removeFromCart(donation.id))}
             className='dtl-cart-item'>
               <BsFillXSquareFill/>
           </Button>
@@ -25,10 +27,4 @@ const CartDonation = ({ donation, removeFromCart }) => {
     )
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeFromCart: (id) => dispatch(removeFromCart(id))
-  }
-}
-
-export default connect (null, mapDispatchToProps)(CartDonation)
+export default CartDonation

@@ -27,28 +27,6 @@ const Home = () => {
     </Card>
     </div>
   );
-
-  // return (
-  //   <div className='homepage'>
-  //       <h1>Daysha's Donations</h1>
-  //       <p>
-  //         Over the years, I have donated a lot of items
-  //         <br/>
-  //         to for-profit thrift stores.
-  //         <br/>
-  //         Rather than contributing to big corporations,
-  //         <br/>
-  //         I have decided to give my items away for those in need.
-  //         <br/>
-  //         with Daysha's donations,
-  //         <br/>
-  //         I am able to list my gently
-  //         <br/> 
-  //         used items and while you pay for shipping.
-  //       </p>
-  //       <img src="thrift.jpg" alt="thrift"/>
-  //     </div>
-  // )
 }
 
 export default Home

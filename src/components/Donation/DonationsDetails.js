@@ -44,5 +44,4 @@ const DonationsDetails = ({getDonation}) => {
       )
 }
 
-
 export default connect(null, {getDonation})(DonationsDetails)

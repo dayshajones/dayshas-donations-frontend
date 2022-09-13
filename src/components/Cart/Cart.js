@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from "react";
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 import CartDonation from '../Cart/CartDonation'
 import { Button } from "react-bootstrap";
 
-const Cart = ({ cart }) => {
+const Cart = () => {
   const [total, setTotal] = useState(0)
+
+  const cart = useSelector(state => state.cart)
 
   useEffect(() => {
     let price = 0
@@ -39,10 +41,5 @@ const Cart = ({ cart }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    cart: state.cart,
-  }
-}
 
-export default connect(mapStateToProps)(Cart)
+export default Cart
