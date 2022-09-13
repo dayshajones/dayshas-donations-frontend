@@ -4,7 +4,7 @@ Daysha's donations is a place for me to list my gently used items and while cust
 
 Demo: <a href="https://www.youtube.com/watch?v=VvAQpXWIpJo">
 
-<img src='/home.jpeg' />
+<img src='/home.png' />
 
 ## Installation
 
