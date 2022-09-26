@@ -27,6 +27,7 @@ const Home = () => {
     </Card>
     </div>
   );
+
 }
 
 export default Home

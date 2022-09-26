@@ -231,3 +231,31 @@ button:disabled
   display: none;
 }
 
+div .donation-details-card {
+  padding: 10px;
+  margin: 10px;
+}
+
+.btn-light {
+  background-color: white;
+  color:  #C39EA0;
+  border-color: white;
+};
+
+.btn-light:hover {
+  background-color: #FA255E;
+  color: white;
+  border-color: #FA255E; 
+}
+
+.btn-outline-secondary {
+  background-color: #FA255E;
+  color: white;
+  border-color: #FA255E; 
+}
+
+.btn-outline-secondary:hover {
+  background-color: white;
+  color:  #C39EA0;
+  border-color: white;
+}

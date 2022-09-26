@@ -1,25 +1,37 @@
-export const submitSignup = (admin) => {
-    return dispatch => fetch("http://localhost:3000/admins", {
+// export const submitSignup = (newAdmin) => {
+//     return dispatch => {
+//       const newAdminData = {
+//         name: newAdmin.name,
+//         password: newAdmin.password
+//       }
+//       return fetch("http://localhost:3000/admins", {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(newAdminData),
+//     })
+//     .then(resp => resp.json())
+//     .then(admin => dispatch({type: "SET_ADMIN", payload: admin}))
+//   }
+// }
+
+export const submitLogin = (adminData) => {
+  return dispatch => {
+      const configAdminData = {
+        name: adminData.name,
+        password: adminData.password
+      }
+      fetch("http://localhost:3000/sessions", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(admin),
+      body: JSON.stringify(configAdminData),
     })
     .then(resp => resp.json())
     .then(admin => dispatch({type: "SET_ADMIN", payload: admin}))
-}
-
-export const submitLogin = (admin) => {
-  return dispatch => fetch("http://localhost:3000/sessions", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(admin),
-  })
-  .then(resp => resp.json())
-  .then(admin => dispatch({type: "SET_ADMIN", payload: admin}))
+  }
 }
 
 export const logout = () => {

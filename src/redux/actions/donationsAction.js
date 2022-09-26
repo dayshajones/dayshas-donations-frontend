@@ -9,8 +9,7 @@ export const getDonations = () => {
 export const getDonation = (id) => {
     return dispatch => fetch(`http://localhost:3000/donations/${id}`)
     .then(res => res.json())
-    .then(donation => dispatch({type: "GET_DONATION", payload: donation})
-    )
+    .then(donation => dispatch({type: "GET_DONATION", payload: donation}))
 }
 
 export const submitDonation = (newDonation) => {
@@ -25,7 +24,6 @@ export const submitDonation = (newDonation) => {
       shipping_price: newDonation.shipping_price,
       admin_id: newDonation.adminId
     }
-    console.log(newDonationData)
     return fetch("http://localhost:3000/donations", {
       method: 'POST',
       headers: {
@@ -34,7 +32,11 @@ export const submitDonation = (newDonation) => {
       body: JSON.stringify(newDonationData),
   })
   .then(resp => resp.json())
-  .then(donation => dispatch({type: "ADD_DONATION", payload: donation}))
+  .then((donation) => {
+    return dispatch({
+      type: "ADD_DONATION",
+      payload: donation})
+    })
   }
 }
 

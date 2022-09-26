@@ -30,32 +30,39 @@ const DonationForm = ({submitDonation}) => {
         <div className="donation-form-container">
             <Form className="new-donation" onSubmit={handleSubmit}>
                 <h2>Create Donation</h2>
+
                 <Form.Group className="mb-3" controlId="DonationForm.ControlInput1">
+                <Form.Label>Brand:</Form.Label>
                 <Form.Control className="w-50" type="text" placeholder="Brand" 
                 value={brand} onChange={(e) => setBrand(e.target.value)}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="DonationForm.ControlInput1">
+                <Form.Label>Department:</Form.Label>
                 <Form.Control className="w-50" type="text" placeholder="Department" 
                 value={department} onChange={(e) => setDepartment(e.target.value)} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="DonationForm.ControlInput1">
+                <Form.Label>Size:</Form.Label>
                 <Form.Control className="w-50" type="text" placeholder="Size" 
                 value={size} onChange={(e) => setSize(e.target.value)}  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="DonationForm.ControlInput1">
+                <Form.Label>Title:</Form.Label>
                 <Form.Control className="w-50" type="text" placeholder="Title" 
                 value={title} onChange={(e) => setTitle(e.target.value)}  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="DonationForm.ControlInput1">
+                <Form.Label>Image URL:</Form.Label>
                 <Form.Control className="w-50" type="text" placeholder="Image URL" 
                 value={image_url} onChange={(e) => setImageUrl(e.target.value)}  />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="DonationForm.ControlInput1">
+                <Form.Label>Shipping Price:</Form.Label>
                 <Form.Control className="w-50" type="text" placeholder="Shipping Price" 
                 value={shipping_price} onChange={(e) => setShippingPrice(e.target.value)}  />
                 </Form.Group>

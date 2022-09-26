@@ -27,20 +27,20 @@ const DonationsDetails = ({getDonation}) => {
   }
 
   return (
-      <div>  
-        <h4>{donation.title}</h4>
-        <p>{donation.brand}</p>
-        <p>{donation.department}</p>
-        <p>{donation.size}</p>
-        <img src={donation.image_url} alt={donation.title} />
-          <p>{donation.available}</p>
-          <p>${donation.shipping_price} </p>
-          <Link to={`/donations`}>
-          <Button variant="outline-secondary">View All<BsFillBackspaceFill/> </Button>
-          </Link>
-          <br/>
-          <Button variant="outline-secondary" disabled={!name ? true : false} onClick={handleClick}>Delete</Button>
-        </div>
+        <div className='donation-details-card'>
+            <Link to={`/donations`}>
+              <Button variant="light">View All<BsFillBackspaceFill/> </Button>
+            </Link>
+          <h4>{donation.title}</h4>
+          <p>{donation.brand}</p>
+          <p>{donation.department}</p>
+          <p>{donation.size}</p>
+          <img src={donation.image_url} alt={donation.title} />
+            <p>{donation.available}</p>
+            <p>${donation.shipping_price} </p>
+            <br/>
+            <Button variant="light" disabled={!name ? true : false} onClick={handleClick}>Delete</Button>
+          </div>
       )
 }
 

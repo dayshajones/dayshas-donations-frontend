@@ -8,19 +8,6 @@ const DonationCard = ({ id, title, brand, size, department, image_url, available
   const dispatch = useDispatch();
 
   return (
-    <>
-         <style type="text/css">
-        {`.btn-outline-secondary {
-        background-color: #FA255E;
-        color: white;
-        border-color: #FA255E; }
-      
-        .btn-outline-secondary:hover {
-        background-color: white;
-        color:  #C39EA0;
-        border-color: white;`} 
-        </style>
-
     <div className="card">
       <Button disabled={!available} variant="outline-secondary"
         onClick={()=> dispatch(addToCart({ id, title, brand, size, department, image_url, available, shipping_price}))}>Add to Cart</Button>
@@ -38,7 +25,6 @@ const DonationCard = ({ id, title, brand, size, department, image_url, available
         </Button>
       </Link>
     </div>
-  </>
   )
 }
 

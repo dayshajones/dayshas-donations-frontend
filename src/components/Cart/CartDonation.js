@@ -7,18 +7,20 @@ import Button from 'react-bootstrap/Button';
 
 const CartDonation = ({ donation }) => {
 
+  const {id, size, image_url, title, brand, department, shipping_price} = donation
+
     const dispatch = useDispatch()
 
     return (
         <Card style={{ width: '18rem' }}>
-        <Card.Img src={donation.image_url} alt={donation.title} />
+        <Card.Img src={image_url} alt={title} />
         <Card.Body>
-          <Card.Title>{donation.title}</Card.Title>
-          <Card.Text>{donation.brand}</Card.Text>
-          <Card.Text>{donation.department}</Card.Text>
-          <Card.Text>{donation.size}</Card.Text>
-          <Card.Text>${donation.shipping_price}</Card.Text>
-          <Button variant="secondary" onClick={() => dispatch(removeFromCart(donation.id))}
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{brand}</Card.Text>
+          <Card.Text>{department}</Card.Text>
+          <Card.Text>{size}</Card.Text>
+          <Card.Text>${shipping_price}</Card.Text>
+          <Button variant="secondary" onClick={() => dispatch(removeFromCart(id))}
             className='dtl-cart-item'>
               <BsFillXSquareFill/>
           </Button>

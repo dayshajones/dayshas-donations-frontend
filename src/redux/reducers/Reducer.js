@@ -20,7 +20,7 @@ const initialState = {
     },
 }
 
-export default function donationReducer(state=initialState, action){
+export default function Reducer(state=initialState, action){
 
     switch (action.type){
         case "GET_DONATIONS":
@@ -44,7 +44,11 @@ export default function donationReducer(state=initialState, action){
         case "LOAD_DONATION":
             return {...state, currentDonation: action.payload }
         case "ADD_DONATION":
-            return {...state, currentDonation: action.payload, allDonations: [...state.allDonations, action.payload]}
+
+            return {
+                ...state, currentDonation: action.payload, 
+                allDonations: [...state.allDonations, action.payload]
+            }
         case "DELETE_DONATION":
             return {...state, 
                 allDonations: state.allDonations.filter(
