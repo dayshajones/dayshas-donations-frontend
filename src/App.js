@@ -1,9 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Routes} from 'react-router-dom'
-import { getDonations } from './redux/actions/donationsAction'
-import {connect} from 'react-redux'
 import NavigationBar from './components/Navbar/NavigationBar';
 import Home from './components/Home';
 import DonationsIndex from './containers/Donationsindex'
@@ -14,9 +12,7 @@ import BillingForm from "./components/Checkout/BillingForm";
 import ThankyouMsg from "./components/Checkout/ThankyouMsg"
 import AdminContainer from "./components/Admin/AdminContainer"
 
-function App({getDonations}) {
-
-  useEffect(getDonations, [getDonations])
+function App() {
 
   const [name, setName] = useState("")
 	const [email, setEmail] = useState("")
@@ -60,4 +56,4 @@ function App({getDonations}) {
   );
 }
 
-export default connect(null, { getDonations })(App)
+export default App
