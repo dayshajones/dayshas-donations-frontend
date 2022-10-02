@@ -1,13 +1,17 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import AdminNav from './AdminNav'
 import DefaultNav from './DefaultNav';
 
-const NavigationBar = () => {
-
-  const name = useSelector((state) => state.admin.name)
+const NavigationBar = ({name}) => {
 
   return name? <AdminNav/> : <DefaultNav/>
 }
 
-export default NavigationBar
+const mapStateToProps = (state) => {
+  return {
+    name: state.admin.name
+  }
+}
+
+export default connect(mapStateToProps)(NavigationBar)

@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import { connect, useSelector } from "react-redux";
+import { connect} from "react-redux";
 import {useNavigate } from "react-router-dom";
 import {submitDonation} from '../../redux/actions/donationsAction'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-const DonationForm = ({submitDonation}) => {
+const DonationForm = ({adminId, submitDonation}) => {
 
     const [brand, setBrand] = useState('')
     const [department, setDepartment] = useState('')
@@ -16,8 +16,6 @@ const DonationForm = ({submitDonation}) => {
     const available = true
 
     const navigate = useNavigate()
-
-    const adminId = useSelector((state) => state.admin.id)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -73,4 +71,20 @@ const DonationForm = ({submitDonation}) => {
     )
 }
 
-export default connect(null, {submitDonation})(DonationForm)
+const mapStateToProps = (state) => {
+    const adminId = state.admin ? state.admin.id : ""
+    return {
+        donationId: state.currentDonation.id,
+        adminId,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        submitDonation: ({brand, department, size, title, image_url, available, shipping_price, adminId}) => { 
+            dispatch(submitDonation({brand, department, size, title, image_url, available, shipping_price, adminId})) 
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DonationForm)

@@ -1,9 +1,7 @@
 import React, { useState, useEffect} from 'react'
-import { useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 
-const CartIcon = () => {
-
-  const cart = useSelector((state) => state.cart)
+const CartIcon = ({cart}) => {
 
   const [cartCount, setCartCount] = useState(0)
 
@@ -17,5 +15,11 @@ const CartIcon = () => {
   )
 }
 
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
 
-export default CartIcon
+
+export default connect(mapStateToProps)(CartIcon)

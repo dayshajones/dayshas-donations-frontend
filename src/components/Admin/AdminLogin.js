@@ -1,21 +1,27 @@
-import React from 'react'
-import { useState } from 'react'
+import React, {useState} from 'react'
 import {submitLogin} from '../../redux/actions/adminActions'
 import { connect } from 'react-redux'
-import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const AdminLogin = ({submitLogin}) => {
+
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
-    const navigate = useNavigate()
+
+    // useEffect(() => {
+    //     console.log(name)
+    // }, [name])
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const admin = {name, password}
         submitLogin(admin)
-        navigate('/donations')
+    }
+
+
+    const handleName = (e) => {
+        setName(e.target.value)
     }
 
     return (
@@ -24,7 +30,7 @@ const AdminLogin = ({submitLogin}) => {
                 <h2>Admin Login</h2>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Name:</Form.Label>
-                <Form.Control className="w-50" type="name" value={name} placeholder="Enter name" onChange={(e) => setName(e.target.value)} />
+                <Form.Control className="w-50" type="name" value={name} placeholder="Enter name" onChange={handleName} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password:</Form.Label>
@@ -36,5 +42,13 @@ const AdminLogin = ({submitLogin}) => {
     )
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+      submitLogin: ({name, password}) => { dispatch(submitLogin({name, password}))
+      }
+    }
+  }
 
-export default connect(null, {submitLogin})(AdminLogin)
+
+
+export default connect(null, mapDispatchToProps)(AdminLogin)

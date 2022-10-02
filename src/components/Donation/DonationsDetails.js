@@ -1,28 +1,21 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link} from 'react-router-dom'
-import { connect, useSelector, useDispatch} from 'react-redux'
+import { connect} from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
-import {getDonation, deleteDonation} from '../../redux/actions/donationsAction'
+import { deleteDonation} from '../../redux/actions/donationsAction'
 import {BsFillBackspaceFill}  from "react-icons/bs";
 import { Button } from 'react-bootstrap'
 
-const DonationsDetails = ({getDonation}) => {
+const DonationsDetails = ({deleteDonation, donation, name}) => {
+
+  const {title, brand, size, department, image_url, available, shipping_price} = donation
 
   const params = useParams()
   const donationId = params.id
-
-  const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const name = useSelector((state) => state.admin.name)
-  const donation = useSelector((state) => state.currentDonation)
-
-  useEffect(() => {
-    getDonation(donationId)
-  }, [getDonation, donationId])
-
   const handleClick = () => {
-    dispatch(deleteDonation(donationId))
+    deleteDonation(donationId)
     navigate("/")
   }
 
@@ -31,17 +24,28 @@ const DonationsDetails = ({getDonation}) => {
             <Link to={`/donations`}>
               <Button variant="light">View All<BsFillBackspaceFill/> </Button>
             </Link>
-          <h4>{donation.title}</h4>
-          <p>{donation.brand}</p>
-          <p>{donation.department}</p>
-          <p>{donation.size}</p>
-          <img src={donation.image_url} alt={donation.title} />
-            <p>{donation.available}</p>
-            <p>${donation.shipping_price} </p>
+          <h4>{title}</h4>
+          <p>{brand}</p>
+          <p>{department}</p>
+          <p>{size}</p>
+          <img src={image_url} alt={title} />
+            <p>{available}</p>
+            <p>${shipping_price} </p>
             <br/>
             <Button variant="light" disabled={!name ? true : false} onClick={handleClick}>Delete</Button>
           </div>
       )
 }
+const mapStateToProps = (state) => {
+  return {
+    name: state.admin.name, 
+    donation: state.currentDonation
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteDonation: (donationId) => dispatch(deleteDonation(donationId))
+  }
+}
 
-export default connect(null, {getDonation})(DonationsDetails)
+export default connect(mapStateToProps, mapDispatchToProps)(DonationsDetails)

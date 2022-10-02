@@ -1,13 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { useSelector } from 'react-redux'
+import { connect } from 'react-redux'
 import { useNavigate } from "react-router-dom";
 import CartDonation from '../Cart/CartDonation'
 import { Button } from "react-bootstrap";
 
-const Cart = () => {
+const Cart = ({cart}) => {
   const [total, setTotal] = useState(0)
-
-  const cart = useSelector(state => state.cart)
 
   useEffect(() => {
     let price = 0
@@ -15,7 +13,7 @@ const Cart = () => {
       price += +donation.shipping_price
     })
     setTotal(price)
-  }, [cart, total, setTotal])
+  }, [cart, total])
 
   const navigate = useNavigate()
 
@@ -41,5 +39,11 @@ const Cart = () => {
   )
 }
 
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
 
-export default Cart
+
+export default connect(mapStateToProps)(Cart)

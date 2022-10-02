@@ -10,4 +10,13 @@ const Logout = ({logout}) => {
     )
 }
 
-export default connect(null, {logout})(Logout)
+
+const mapDispatchToProps = dispatch => {
+    return {
+      logout: () => { dispatch(logout())
+      }
+    }
+  }
+
+
+export default connect(null, mapDispatchToProps)(Logout)

@@ -55,4 +55,3 @@ const CheckoutContainer = ({name, email, address }) => {
 }
 
 export default CheckoutContainer
-
