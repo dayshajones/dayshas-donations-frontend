@@ -9,10 +9,6 @@ const AdminLogin = ({submitLogin}) => {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
 
-    // useEffect(() => {
-    //     console.log(name)
-    // }, [name])
-
     const handleSubmit = (e) => {
         e.preventDefault()
         const admin = {name, password}

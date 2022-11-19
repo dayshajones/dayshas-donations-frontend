@@ -22,7 +22,7 @@ export const submitLogin = (adminData) => {
         name: adminData.name,
         password: adminData.password
       }
-      fetch("http://localhost:3000/sessions", {
+      fetch("https://dayshas-donations.herokuapp.com/sessions", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

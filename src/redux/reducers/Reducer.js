@@ -25,8 +25,6 @@ export default function Reducer(state=initialState, action){
     switch (action.type){
         case "GET_DONATIONS":
           return {...state, allDonations: action.payload};
-        // state.allDonations = action.payload
-        // return state
         case "GET_DONATION":
             return {...state, currentDonation: action.payload}
         case "ADD_TO_CART":
